@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <link rel="stylesheet" href="{% static 'boostrap-5.0.2-dist/css/boostrap.min.css' %}">
+    <style>
+        body{
+    background-color: white ;
+    background: linear-gradient(to right,#e2e2e2,white);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+       .soratra{
+        position: fixed;
+    top:220px;
+    color: rgb(37, 37, 134);
+    margin-left:150px;
+    width: 60%;
+    height: 400px; 
+border-radius:10px;
+       }
+       .soratra2{
+        position: fixed;
+    top:330px;
+    margin-left:150px;
+    width: 60%;
+    height: 400px; 
+border-radius:10px;
+       }
+    .bu{
+        position: fixed;
+    top:420px;
+    background-color: rgb(39, 39, 116);
+    color: white;
+    margin-left:150px;
+    width: 30%;
+    height: 45px; 
+border-radius:10px;
+    }
+    .topbar{
+    position: fixed;
+    background-color:linear-gradient(to right,#e2e2e2,white);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    width: 100%;
+    height: 50px;
+    padding:0 ,10px;
+    display: grid;
+    grid-template-columns: 7fr 22fr 0.8fr 1.3fr;
+    align-items: center;
+    z-index:2 ;
+    /* margin-left:196px; */
+    border-radius:3px;
+}
+.logo img{
+    position:absolute;
+    top:0px;
+    left: 0px;
+    height: 100%;
+    object-fit: cover;
+    /* border-radius: 300px; */
+}
+.bou{
+    position:absolute;
+    top:0;
+    left:85%;
+    width: 130px;
+    height: 100%;
+    background-color: rgb(39, 39, 116);
+    color: white;
+    border-radius: 10px;
+}
+    </style>
+    
+</head>
+<body>
+    <div class="topbar">
+        <div class="logo">
+            <img src="" alt="">
+        </div>
+       <button class="bou"> se connecter</button> 
+    </div>
+
+
+
+    <h2 class="soratra">APPLICATION DE GESTION D'EMPLOI <br>
+    DU TEMPS DE L'INSTITUT DE FORMATION <br>
+TECNIQUE FIANARANTSOA</h2> <br>
+   <div class="soratra2">Ici vous pouvez consulter les emplois 
+    du temps de chaque niveau de chaque mention <br> ainsi que les salles
+    disponible.
+</div>
+<button class="bu"> Consulter</button>
+
+     {% block content%} {% endblock content%}
+</div>
+
+
+
+{{form.nomprof}}
+
+
+
+ <script src="{% static 'boostrap-5.0.2-dist/css/boostrap.bundle.min.js' %}"></script> 
+</body>
+</html>

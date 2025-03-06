@@ -1,0 +1,124 @@
+{% extends 'index.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+  <title>Document</title>
+  <style>
+        
+          .N{
+            position: fixed;
+  top:240px;
+    margin-left:196px;
+    background:white;    
+    width: 100%;
+    height: 400px; 
+
+margin-left: 200px;
+    }
+    a{
+            text-decoration: none;
+            color: #fff;
+            width: 50px;
+
+          }
+          h3{
+          top: 10%;
+            margin-left: 300px;
+          }
+      
+      .B{  position: fixed;
+  top:450px;
+margin-left:300px;
+background:rgb(39, 39, 116);
+color: #fff;   
+width: 20%;
+height:40px; 
+border-radius:10px;
+padding: 5px 10px;
+font-size: 16px;
+cursor: pointer;
+text-align:center ;
+
+}
+table {
+    border-collapse: collapse;
+    top:15%;
+    border-spacing:56px;
+    width: 90%;
+    /* border:  solid #ddd; */
+
+}
+.table img{
+    position:absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    object-fit: cover;
+}
+
+thead{
+    background:white;
+
+}
+th{
+    padding:18px;
+    text-align:left;
+    
+    margin-left:85%;
+}
+tbody{
+    background: #f2f2f2;
+    Font-family:Lucida;
+    /* color: #fff; */
+}
+td{
+    padding: 20px;
+    /* font-size: 14px; */
+    color: grey;
+}
+
+      </style>
+    
+</head>
+<body>
+  
+
+      <div class="N">
+      <form method="POST" class="post-form"  >
+        {% csrf_token %}
+        <h3>MODIFICATIONS</h3>
+        <hr>
+      <table>
+        <thead>
+          <th></th>
+          <th></th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>         
+              
+          <td> <b> NOMS:  </b> </td>
+          <td> {{ form.nomprof }}</td>                  
+              
+            <td> <b> PRENOMS:  </b> </td>
+            <td> {{ form.prenomprof }}</td>
+ 
+            <tr>         
+              
+              <td> <b> TELEPHONE:  </b> </td>
+              <td> {{ form.telprof }}</td> 
+              
+                <td> <b> SPECIALITE:  </b> </td>
+                <td>  {{ form.specialite}}
+                </td>
+    
+      </table>
+      <button type="submit"  class="B">ENREGISTRERmo</button>
+    </form>
+  </div>
+    </body>
+    </html>
+    {% endblock %}

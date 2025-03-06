@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" class="modal-content animate"  >
+        {% csrf_token %}   
+       <!-- <label for="uname"><b>Poids brut</b> <input type="text" placeholder="Entrer la poids brute" name="brute" required  size="6" > <br></label> -->
+      <br> <label ><b>Noms:</b></label> &nbsp; &nbsp; &nbsp;{{form.nomprof}} <br> <br> <br>    
+       <label ><b>Prénoms:</b></label>  &nbsp; &nbsp; &nbsp;{{form.prenomprof}} <br> <br> <br>
+       <label><b>Téléphone:</b></label>  &nbsp; &nbsp; &nbsp;{{form.telprof}} <br> <br> <br>
+       <label><b>Spécialité:</b></label>  &nbsp; &nbsp; &nbsp;{{form.specialite}} <br> <br> 
+       
+   
+       <!-- <label for="uname"><b>Poids net</b></label>
+       <input type="text" placeholder="Entrer la poids net" name="net" required> <br> <br> -->
+       
+       
+     
+
+    
+        
+      <center>  <button  class="cancelbtn" type="submit">Enregistrer</button> </center>
+       <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+   </form>
+</body>
+</html>

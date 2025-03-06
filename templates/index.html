@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- <link rel="stylesheet" href="{% static 'boostrap-5.0.2-dist/css/boostrap.min.css' %}"> -->
+    <link rel="stylesheet" href="{%static 'fontawesome-free-6.3.0-web/css/all.min.css'%}">
+<style>
+    body{
+    padding: 0;
+    margin: 0;    
+    background-color: #c9d6ff ;
+    background: linear-gradient(to right,#e2e2e2,#c9d6ff);
+    font-family:'poppins', sans-serif;
+}
+     .topbar{
+    position: fixed;
+    background-color:white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    width: 100%;
+    height: 50px;
+    padding:0 ,10px;
+    display: grid;
+    grid-template-columns: 7fr 22fr 0.8fr 1.3fr;
+    align-items: center;
+    z-index:2 ;
+    /* margin-left:196px; */
+    border-radius:3px;
+}
+.logo img{
+    position:absolute;
+    top:0px;
+    left: 0px;
+    height: 100%;
+    object-fit: cover;
+    /* border-radius: 300px; */
+}
+.search{
+    position: relative;
+    width: 60%;
+    justify-self: center;
+    top:20%
+}
+.search input{
+    top:10%;
+    width: 100%;
+    height: 33px;
+    padding: 0 40px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: whitesmoke;
+}
+.search i{
+    position: absolute;
+    right: 15px;
+    top:15px;
+    cursor:pointer;
+}
+
+.bou{
+    position:absolute;
+    top:0;
+    left:85%;
+    width: 130px;
+    height: 100%;
+    background-color: rgb(39, 39, 116);
+    color: white;
+    border-radius: 10px;
+}
+.sidebar{
+    position: fixed;
+    top: 60px;
+    width: 220px;
+    /* height: calc(100%-60px); */
+    height:100%;
+    background-color: rgb(39, 39, 116);;
+    overflow-x: hidden;
+    border-radius:20px;
+    padding:0px;
+}
+.sidebar img{
+    position:absolute;
+    top:10px;
+    left: 15px;
+    height: 15%;
+    object-fit: cover;
+    border-radius: 30px;
+    width:80%;
+}
+.sidebar ul{
+    margin-top:27px;
+    
+}
+.sidebar ul li{
+    width: 100%;
+    list-style: none;
+}
+.sidebar ul li a{
+    width: 100%;
+    text-decoration: none;
+    margin-left:0%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+ }
+
+ .sidebar ul li a i{ 
+    min-width: 30px;
+    font-size: 20px;
+    text-align:left;
+    margin-left: -20px;
+ }
+ .btn {
+    border: none;
+    background-color: rgb(39, 39, 116); ;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    color:white;
+    padding: 30px;
+}
+.btn:hover {background: rgb(56, 56, 129); 
+    }
+    *{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+.main{
+    position: fixed;
+    top: 59px;
+    width: calc(100%-180px);
+    left: 180px;
+    min-height: calc(120vh - 60px);
+    background: white;
+}
+.cards{
+    width: 100%;
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(10, 2fr);
+    grid-gap: 80px;
+}
+.card{
+    padding: 10px;
+    width: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:rgb(106, 106, 150);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px 0  rgba(0,0,0,0.08);
+}
+.number{
+    font-size: 35px;
+    font-weight: 300;
+    color:white; 
+}
+.card-name{
+    color:#888;
+    font-weight: 600;
+}
+.icon-imbox i{
+    font-size: 45px;
+    color:rgb(39, 39, 116);  ;
+}
+.logo h1{
+    Top:10px;
+    color:rgb(39, 39, 116); ;
+  margin-left:30px;
+  
+  font-family:'poppins', sans-serif; 
+}
+
+
+ 
+</style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="logo">
+            <h1>GE-EDT</h1>
+            <img src="" alt="">
+        </div>
+        <div class="search">
+            <Form action="/recherche" method="Get" >
+                <input type="search" name="query" id="search"placehodor="chercher">
+                <label for="search"> <button class="st" type="submit" > <i class="fas fa-search"></i></button></label>
+                </Form>
+            </div>
+        </div>
+        <div class="sidebar">
+            
+              <ul>
+                
+                 <li>
+                     <a href="{% url 'emploi'%}" class="btn btn-order" >
+                        <i class="fas fa-th-large"></i>
+                         <div> <b> Emploie du temps </b></div>
+                     </a>
+                 </li> <br>
+                 
+                 <li> 
+                     
+                     <a href="{% url 'prof'%}" class="btn btn-order" >
+                        <i class="fas fa-users"></i>
+                         <div><b> Professeurs </b> </div>
+                     </a>
+                 </li>    <br>
+                  
+                 <li>
+                         
+                 <a href="{% url 'mention'%}" class="btn btn-order">
+                    <i class="fas fa-clipboard"></i>
+                   <div><b> Filières</div>
+                             </a>
+                            </li>    <br>
+                             
+                             <li>                         
+                                <a href="{% url 'Salle'%}" class="btn btn-order">  
+                                    <i class="fas fa-school "></i>                                                         
+                                <div><b> salles </b></div>
+                                </a>
+                                </li>    <br>
+                                </div>
+                          
+                        
+                          <div>
+       <!-- <button class="bou"> se connecter</button>  -->
+    </div>
+    <div class="main">
+        
+        <div class="cards">
+           
+        
+       
+            <div class="card">
+                <div class="card-content">
+                  
+                     <div class="number">{{last_entry.matricule}}</div>                    
+                   
+                     
+                   
+                    <div class="card-name">PROFESSEURS</div>
+                </div>
+                <div class="icon-imbox">
+                    <i class="fas fa-users"></i>
+
+                </div>
+            </div>
+        
+       
+            <div class="card">
+                <div class="card-content">
+                    <div class="number">{{lastF.numment}}</div>
+                    <div class="card-name">FILIERES</div>
+                </div>
+                <div class="icon-imbox">
+                    <i class="fas fa-clipboard"></i>
+
+                </div>
+            </div>
+        
+       
+            <div class="card">
+                <div class="card-content">
+                    <div class="number">{{lastS.numsalle}}</div>
+                    <div class="card-name">SALLES
+
+                    </div>
+                </div>
+                <div class="icon-imbox">
+                    <i class="fas fa-school"></i>
+
+                </div>
+                </div>
+            
+           
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">{{lastE.numedt}}</div>
+                        <div class="card-name">EDT</div>
+                    </div>
+                    <div class="icon-imbox">
+                        <i class="fas fa-th-large"></i>
+    
+                    </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+    {{form.nomprof}}
+     {% block content%} {% endblock content%}
+</div>
+
+
+
+
+
+
+
+  
+</body>
+</html>

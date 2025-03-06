@@ -1,0 +1,179 @@
+{% extends 'index.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+  <title>Document</title>
+  <style>
+        
+          .N{
+            position: relative;
+  top:190px;
+    margin-left:50%;
+    background:white;    
+    width: 80%;
+    height: 500px; 
+
+margin-left: 200px;
+    }
+    a{
+            text-decoration: none;
+            color: #fff;
+            width: 50px;
+
+          }
+          h3{
+          top: 10%;
+            margin-left: 300px;
+          }
+      
+      .B{  position: fixed;
+  top:500px;
+margin-left:320px;
+background:rgb(39, 39, 116);
+color: #fff;   
+width: 20%;
+height:40px; 
+border-radius:10px;
+padding: 5px 10px;
+font-size: 16px;
+cursor: pointer;
+text-align:center ;
+
+}
+table {
+
+    border-collapse:collapse;
+    top:10%;
+    border-spacing:20px;
+    width: 100%;
+    left: 50%;
+    /* border:  solid #ddd; */
+
+}
+.table img{
+    position:absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    object-fit: cover;
+}
+
+thead{
+    background:white;
+
+}
+th{
+    padding:18px;
+    text-align:left;
+    
+    margin-left:65%;
+}
+tbody{
+    background: #f2f2f2;
+    Font-family:Lucida;
+    /* color: #fff; */
+}
+td{
+    padding: 27px;
+    /* font-size: 14px; */
+    color: grey;
+}
+
+      </style>
+    
+</head>
+<body>
+  
+<!-- <div class="N">
+  <h3> NOUVEAUX PROFESSEURS</h3>
+  <div class="container mt-3" id="icon">
+        
+
+         
+        <form method="POST" class="post-form"  >
+            {% csrf_token %}
+            {% if messages %}
+            {% for displaydata in messages %}
+            <h3 style="color: aqua;">{{displaydata}}</h3>
+            {% endfor %}
+            {% endif %}
+          
+            <label for="" class="">NOM</label>
+            {{ form.nomprof }}
+
+            <label for="" class="">PRENOM</label>
+            {{ form.prenomprof }}
+        
+          <br>
+          
+              <label >TELEPHONE</label>
+           {{ form.telprof }}
+         
+              <label >SPECIALITE</label>
+              {{ form.specialite}}
+            
+            <br>
+            
+             <button type="submit"  class="B">ENREGISTRER</button>
+            
+         
+          </div><br>
+          
+        </form> 
+    </div>
+    
+      </div> -->
+      <div class="N">
+      <form method="POST" class="post-form"  >
+        {% csrf_token %}
+        <h3>NOUVEAUX EMPLOI DU TEMPS</h3> <br>
+        <hr> <br>
+      <table>
+        <thead>
+          <!-- <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th> -->
+        </thead>
+        <tbody>
+          <tr>         
+              
+          <td> <b> JOURS:  </b> </td>
+          <td> {{ form.jours }}</td>                  
+              
+            <td> 
+              b>FILIERE:  </b> </td>
+            <td> {{ form.numm }}</td>
+
+            <td> <b>NIVEAU:  </b> </td>
+            <td> {{ form.niveau }}</td>
+            <tr>
+              <td> <b> PROF :  </b> </td>
+            <td>  {{form.matricule}}
+            
+            <td> <b> MODULES:  </b> </td>
+            <td>  {{ form.matiere}}
+              <td> <b> SALLES:  </b> </td>
+                <td>  {{ form.numsalle}}
+            
+            <tr>         
+              <td> <b> DATE:  </b> </td>
+                <td>  {{ form.date}} </td>
+              <td> <b> DEBUT :  </b> </td>
+              <td> {{ form.heurede}}</td> 
+              
+                <td> <b> FIN :  </b> </td>
+                <td>  {{ form.heurefin}} </td>
+
+    </tr>
+      </table>
+      <button type="submit"  class="B">ENREGISTRER</button>
+    </form>
+  </div>
+    </body>
+    </html>
+    {% endblock %}
